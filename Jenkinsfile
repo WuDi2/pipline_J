@@ -8,12 +8,9 @@ pipeline {
                 bat 'git checkout %BRANCH_C%'
                 bat 'git merge remotes/pipline_c/%BRANCH_C%'
                 bat 'git merge remotes/pipline_j/%BRANCH_J% --allow-unrelated-histories'
-                sshagent (credentials: ['dwu2']) {
-                bat("git push pipline_c %BRANCH_C%:%BRANCH_C%")
-                }
-                sshagent (credentials: ['pipline_2_2']) {
-                bat("git push pipline_j %BRANCH_C%:%BRANCH_J%")
-                }            
+
+                bat 'git push pipline_c %BRANCH_C%:%BRANCH_C%'
+                bat 'git push pipline_j %BRANCH_C%:%BRANCH_J%'
             }
         }
         stage('Test') {
