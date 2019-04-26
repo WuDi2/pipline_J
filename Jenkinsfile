@@ -16,6 +16,13 @@ pipeline {
                 }            
             }
         }
+        stage('Build') {
+            steps {
+                echo 'Building....'
+                sh '/usr/sbin/httpd -v'
+                sh '/usr/sbin/apachectl stop'
+            }
+        }
         stage('Test') {
             steps {
                 echo 'Testing....'
