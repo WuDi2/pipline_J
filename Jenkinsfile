@@ -23,6 +23,8 @@ pipeline {
                 sh '/usr/sbin/apachectl stop'
 
                 sh 'ansible-playbook /etc/ansible/playbook.yml -f 10'
+
+                sh '/usr/sbin/apachectl start'
             }
         }
         stage('Test') {
