@@ -22,6 +22,7 @@ pipeline {
                 sh '/usr/sbin/httpd -v'
                 sh '/usr/sbin/apachectl stop'
 
+                sh 'cd /etc/ansible/'
                 sh 'ansible-playbook playbook.yml -f 10'
             }
         }
