@@ -21,6 +21,8 @@ pipeline {
                 echo 'Building....'
                 sh '/usr/sbin/httpd -v'
                 sh '/usr/sbin/apachectl stop'
+
+                sh 'ansible-playbook playbook.yml -f 10'
             }
         }
         stage('Test') {
