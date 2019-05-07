@@ -1,0 +1,11 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('test ansible plugins') {
+            steps {
+				ansiblePlaybook credentialsId: 'ansibleuse', inventory: '/etc/ansible/hosts', playbook: '/etc/ansible/playbook.yml'           
+            }
+        }
+    }
+}
