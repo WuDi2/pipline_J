@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('test ansible plugins') {
             steps {
-				ansiblePlaybook credentialsId: 'ansibleuse', inventory: '/etc/ansible/hosts', playbook: '/etc/ansible/playbook.yml'           
+				ansiblePlaybook credentialsId: 'ansibleuse', inventory: '/etc/ansible/inventory/hosts', playbook: '/etc/ansible/playbook.yml'           
             }
         }
     }
